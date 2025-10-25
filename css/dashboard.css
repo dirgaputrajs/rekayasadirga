@@ -1,6 +1,6 @@
 /* Header atas */
 .header {
-  background-image: url('../../aset/s.png');
+  background-image: url('../aset/s.png');
   color: rgb(12, 1, 1);
   padding: 55px 15px; /* ⬅️ ubah angka pertama untuk jarak atas/bawah */
   display: flex;
@@ -79,3 +79,4 @@
   color: #e11d48; /* merah muda terang */
   font-weight: bold;
 }
+
