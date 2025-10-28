@@ -1,6 +1,6 @@
 /* Header atas */
 .header {
-  background-image: url('/aset/s.png');
+  background-image: url('aset/s.png');
   color: rgb(12, 1, 1);
   padding: 55px 15px;
   display: flex;
@@ -216,4 +216,5 @@ function updateStatus(id, isOnline) {
     text.textContent = 'OFFLINE ❌';
   }
 }
+
 
