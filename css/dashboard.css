@@ -31,7 +31,7 @@
 
 /* Tombol logout */
 .logout-btn {
-  background-color: #f77f10;
+  background-color: #f71810;
   border: none;
   color: #fff;
   font-weight: bold;
@@ -216,3 +216,4 @@ function updateStatus(id, isOnline) {
     text.textContent = 'OFFLINE ❌';
   }
 }
+
