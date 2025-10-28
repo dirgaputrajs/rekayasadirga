@@ -1,0 +1,245 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* STICKY FOOTER SETUP & BACKGROUND */
+html, body {
+  height: 100%;
+
+}
+
+body {
+  background-image: url('../../aset/lty.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Kita tetap gunakan flexbox di body, tapi wrapper yang akan menyesuaikan */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Jam di Pojok Atas --- */
+.clock {
+    display: block;
+    text-align: right;
+    font-size: 34px;
+    padding: 10px;
+    background-color: rgba(250, 224, 224, 0); 
+    font-weight: bold;
+    color: #000000;
+    z-index: 110; 
+}
+
+
+/* WRAPPER KONTEN UTAMA */
+.wrapper {
+  /* Kunci: Mengisi ruang yang tersisa, tapi kita beri ruang ekstra di bawah */
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Memusatkan konten secara vertikal di dalam wrapper */
+  /* Memberi ruang yang cukup untuk KEDUA elemen fixed di bagian bawah (total sekitar 220px) */
+  padding-bottom: 220px; 
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.582);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* PANEL KIRI - INFO */
+.left-panel {
+  width: 50%;
+  background-color: #33e28294;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.left-panel img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  text-align: center;
+}
+
+/* PANEL KANAN - LOGIN */
+.right-panel {
+  width: 50%;
+  background-color: #85e2da57;
+  padding: 30px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(10, 1, 1);
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #0f24e2;
+  border-radius: 5px;
+}
+
+.actions {
+  margin: 10px 0;
+  text-align: right;
+}
+
+.actions a {
+  color: #002d74;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+button {
+  background-color: #002d74;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0041a3;
+}
+
+p {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* FOOTER UTAMA (SEKARANG FIXED DI BAWAH LAYAR) */
+.footer {
+  /* KUNCI PERUBAHAN: Menjadi Fixed */
+  position: fixed; 
+  bottom: 0px; /* Berada di paling bawah layar */
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #afe29be8;
+  color: #680c0c;
+  font-size: 24px;
+  border-top: 3px solid #f3500f;
+  border-bottom: 4px solid #f3500f;
+  z-index: 900; /* Di bawah Quick Links */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-logo {
+  height: 30px;
+  vertical-align: middle;
+}
+
+/* FIXED QUICK LINKS (Menu Ikon yang Selalu Terlihat di Dasar Layar) */
+.quick-links {
+  position: fixed; /* Kunci: posisi tetap pada layar */
+  /* KUNCI PERUBAHAN: Berada tepat di atas footer (~60px adalah tinggi footer) */
+  bottom: 110px; 
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Berada di atas footer */
+  display: flex;
+  overflow-x: auto; /* Memungkinkan scroll horizontal jika ikon terlalu banyak */
+  white-space: nowrap;
+  gap: 12px;
+  padding: 10px; 
+  background-color: #9c9de7;
+  border-radius: 10px 10px 0 0;
+  scroll-behavior: smooth;
+  justify-content: flex-start; 
+}
+
+/* Menghilangkan scrollbar */
+.quick-links::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-links {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.quick-link {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: hsl(137, 54%, 97%);
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: #130d01;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.quick-link img {
+  width: 24px;
+  height: 24px;
+}
+
+.quick-link:hover {
+  background-color: #7686a1;
+}
+
+/* MEDIA QUERIES (Responsif) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        width: 100%;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .wrapper {
+        /* Menyesuaikan ruang bawah untuk tampilan mobile */
+        padding-bottom: 180px; 
+    }
+}
