@@ -1,0 +1,164 @@
+/* ===== style utama (sesuai yang kamu kirim) ===== */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('../aset/lty.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+html, body {
+  height: 100%;
+}
+/* bungkus jika ada 2 container agar rapi berdampingan di layar lebar */
+.containers-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* setiap container (bank / emoney) */
+.container {
+  background: rgb(15, 228, 228);
+  padding: 30px 28px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 320px;
+  text-align: center;
+}
+
+/* jika ingin container lebih lebar di desktop, gunakan modifier */
+.container.wide {
+  width: 420px;
+}
+
+/* baris item */
+.kota {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* label & select agar sejajar */
+.kota label {
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+  color: #062033;
+}
+
+.kota select {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* tombol simpan (sama untuk bank & emoney) */
+button {
+  margin-top: 18px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color .18s ease, transform .06s ease;
+}
+
+button:hover {
+  background: #0056c8;
+  transform: translateY(-1px);
+}
+
+/* khusus tombol simpan e-money (opsional visual) */
+#saveEmoneyBtn {
+  background: #1e90ff;
+}
+#saveEmoneyBtn:hover {
+  background: #1877d2;
+}
+
+/* notifikasi (bank & emoney) */
+#notif,
+#notifEmoney {
+  margin-top: 10px;
+  color: rgb(27, 34, 65);
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+/* ===== responsif: tampilan mobile ===== */
+@media (max-width: 760px) {
+  body {
+    padding: 12px;
+    align-items: stretch;
+  }
+
+  .containers-wrapper {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 420px;
+    padding: 22px;
+  }
+
+  .kota {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .kota label {
+    margin-bottom: 6px;
+  }
+
+  .kota select {
+    width: 100%;
+  }
+}
+
+.footer {
+  /* KUNCI PERUBAHAN: Menjadi Fixed */
+  position: fixed; 
+  bottom: 0px; /* Berada di paling bawah layar */
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #afe29be8;
+  color: #680c0c;
+  font-size: 24px;
+  border-top: 3px solid #f3500f;
+  border-bottom: 4px solid #f3500f;
+  z-index: 900; /* Di bawah Quick Links */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-logo {
+  height: 30px;
+  vertical-align: middle;
+}
