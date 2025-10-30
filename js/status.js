@@ -47,11 +47,23 @@ saveBtn.addEventListener("click", async () => {
   try {
     await set(ref(db, "statusKota"), updates);
     notif.textContent = "✅ Status berhasil diperbarui!";
+
+      // ⏳ Hilangkan notifikasi setelah 3 detik
+  setTimeout(() => {
+    notif.textContent = "";
+  }, 2000);
+
   } catch (err) {
     notif.textContent = "❌ Gagal menyimpan status!";
     console.error(err);
+      // Hilangkan pesan error juga setelah 3 detik
+  setTimeout(() => {
+    notif.textContent = "";
+  }, 3000);
   }
 });
+
+
 
 // ===============================
 // UBAH WARNA OTOMATIS ONLINE/OFFLINE
@@ -108,8 +120,75 @@ saveEmoneyBtn.addEventListener("click", async () => {
   try {
     await set(ref(db, "statusEmoney"), updates);
     notifEmoney.textContent = "✅ Status E-Money berhasil diperbarui!";
+ 
+    setTimeout(() => {
+    notifEmoney.textContent = "";
+  }, 2000);
+
+    
   } catch (err) {
     notifEmoney.textContent = "❌ Gagal menyimpan status E-Money!";
     console.error(err);
+
+      setTimeout(() => {
+    notifEmoney.textContent = "";
+  }, 2000);
+
   }
+});
+// ===============================
+// POPUP TAMBAH USER + SIMPAN KE FIREBASE
+// ===============================
+import { push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+window.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("popupAddUser");
+  const openBtn = document.getElementById("openPopupBtn");
+  const closeBtn = document.getElementById("closePopupBtn");
+  const saveUserBtn = document.getElementById("saveUserBtn");
+  const inputUsername = document.getElementById("newUsername");
+  const inputPassword = document.getElementById("newPassword");
+
+  if (!popup || !openBtn || !closeBtn || !saveUserBtn) return;
+
+  // --- Buka & tutup popup
+  openBtn.addEventListener("click", () => {
+    popup.style.display = "block";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
+  });
+
+  // --- Simpan user ke Firebase
+  saveUserBtn.addEventListener("click", async () => {
+    const username = inputUsername.value.trim();
+    const password = inputPassword.value.trim();
+
+    if (!username || !password) {
+      alert("⚠️ Nama dan password wajib diisi!");
+      return;
+    }
+
+    try {
+      const usersRef = ref(db, "users");
+      const newUserRef = push(usersRef);
+      await set(ref(db, "users/" + username), {
+        password: password,
+
+      });
+
+      alert("✅ User baru berhasil ditambahkan!");
+      popup.style.display = "none";
+      inputUsername.value = "";
+      inputPassword.value = "";
+    } catch (err) {
+      console.error("❌ Gagal menambah user:", err);
+      alert("❌ Gagal menambah user. Coba periksa koneksi atau izin Firebase.");
+    }
+  });
 });
