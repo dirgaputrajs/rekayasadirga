@@ -8,10 +8,31 @@
 
 </head>
 <body>
+<!-- Tombol tambah -->
+<button id="openPopupBtn" class="btn-add-user">+ Tambah User</button>
 
-  <!-- Wrapper agar kedua container rapi berdampingan -->
+<!-- Popup -->
+<div id="popupAddUser" class="modal">
+  <div class="modal-content">
+    <span id="closePopupBtn" class="close">&times;</span>
+    <h4>Tambah User Baru</h4>
+    <input type="text" id="newUsername" placeholder="Nama pengguna" />
+    <input type="password" id="newPassword" placeholder="Kata sandi" />
+        <label for="role">Role:</label>
+        <select id="role">
+        <option value="admin">Admin</option>
+        <option value="user">User Biasa</option>
+</select>
+    <button id="saveUserBtn">Simpan</button>
+<div id="userContainer" style="margin-top:15px;"></div>
+
+  </div>
+</div>
+
+
+
+  
   <div class="containers-wrapper">
-
     <!-- BAGIAN BANK -->
     <div class="container">
       <h2>⚙️🟥 Pengaturan Status BANK</h2>
@@ -118,6 +139,9 @@
 
   </div> <!-- /containers-wrapper -->
 
+
+
+  
   <script type="module" src="js/status.js" defer></script>
 
 
