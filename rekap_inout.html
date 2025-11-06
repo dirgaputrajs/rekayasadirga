@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABSENSI STAF</title>
+  <link rel="stylesheet" href="css/rekap_inout.css" />
+</head>
+<body>
+  <!-- Jam -->
+
+
+  <header class="top-bar">
+    <span id="userNameDisplay">👤 User</span>
+    <button id="logoutBtn" class="btn-logout">🚪 Logout</button>
+    <span class="clock" id="clock-display"></span>
+  </header>
+
+  <!-- Konten utama -->
+  <main class="main-content">
+ 
+    <!-- ⏱️ Durasi keluar -->
+    <h3 id="durationDisplay" class="duration-display"></h3>
+   
+    <h2>Absensi Kehadiran</h2>
+
+    <div class="button-group">
+      <button id="btnOut" class="btn out">Keluar</button>
+      <select id="reasonSelect" class="reason-select">
+        <option value="">-- Pilih Alasan Keluar --</option>
+        <option value="makan">Makan</option>
+        <option value="bab">BAB</option>
+        <option value="bak">BAK</option>
+        <option value="merokok">Merokok</option>
+        <option value="beli">Beli</option>
+        <option value="buang sampah">Buang Sampah</option>
+      </select>
+
+      <button id="btnIn" class="btn in">Masuk</button>
+
+
+    </div>
+
+    <p id="notif" class="notif"></p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <span>Copyright © 2025</span>
+      <img src="aset/android-chrome-512x512.png" alt="Logo DSPS" class="footer-logo" />
+      <span>All Rights Reserved</span>
+    </div>
+  </footer>
+
+  <script type="module" src="js/rekap_inout.js"></script>
+</body>
+</html>
