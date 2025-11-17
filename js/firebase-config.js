@@ -3,14 +3,14 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebas
 import { getDatabase } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCmojk02qTJcueMxEaDAoaiD25INJaDq4s",
-  authDomain: "data-dirga.firebaseapp.com",
+  apiKey: "AIzaSyC7P6PhxWBKbzHQNiH3hdygTv-vbAGIu4I",
+  authDomain: "dataterbarudirga.firebaseapp.com",
   databaseURL: "https://data-pass-20681-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "data-dirga",
-  storageBucket: "data-dirga.appspot.com",
-  messagingSenderId: "223486198559",
-  appId: "1:223486198559:web:09f37d1db3b3030895262a",
-  measurementId: "G-JQ429SMJC8"
+  projectId: "dataterbarudirga",
+  storageBucket: "dataterbarudirga.firebasestorage.app",
+  messagingSenderId: "236647355440",
+  appId: "1:236647355440:web:2da3403da62a695aa8c9f5",
+  measurementId: "G-87C4LBC4W0"
 };
 
 
