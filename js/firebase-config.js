@@ -5,7 +5,7 @@ import { getDatabase } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-
 const firebaseConfig = {
   apiKey: "AIzaSyC7P6PhxWBKbzHQNiH3hdygTv-vbAGIu4I",
   authDomain: "dataterbarudirga.firebaseapp.com",
-  databaseURL: "https://data-pass-20681-default-rtdb.asia-southeast1.firebasedatabase.app",
+  databaseURL: "https://dataterbarudirga-default-rtdb.asia-southeast1.firebasedatabase.app/",
   projectId: "dataterbarudirga",
   storageBucket: "dataterbarudirga.firebasestorage.app",
   messagingSenderId: "236647355440",
